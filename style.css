@@ -1,9 +1,80 @@
-html {
-    height:100%;
-    width:100%;
+/* --------------------------------------- */
+/* ----- Global Variables ----- */
+/* --------------------------------------- */
+:root {
+    /* ----- font sizes ----- */
+    --font-size-small: 18px;
+    --font-size-normal: 22px;
+    --font-size-medium: 28px;
+    --font-size-medium-1: 36px;
+    --font-size-large: 55px;
+    --font-size-huge: 75px;
+
+    /* ----- colours ----- */
+    --primary: #63313A;
+    --secondary: maroon;
+    --text-colour: beige;
+
+    /* ----- padding ----- */
+    --padding-small: 16px;
+    --padding-normal: 40px;
+    --padding-medium: 80px;
 }
 
+/* --------------------------------------- */
+/* ----- Basic Setup ----- */
+/* --------------------------------------- */
+
 body {
-    background-color: crimson;
-    color: beige;
+    background-color: var(--primary);
+    color: var(--text-colour);
 }
+
+h1 {
+    font-size: var(--font-size-huge);
+}
+
+h2 {
+    font-size: var(--font-size-large);
+}
+
+/* --------------------------------------- */
+/* ----- Navigation ----- */
+/* --------------------------------------- */
+
+.nav {
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--padding-normal) 0;
+}
+
+.nav__items {
+    display: flex;
+    list-style: none;
+}
+
+.nav__item:not(:last-child) {
+    margin-right: var(--padding-medium);
+}
+
+.nav__link {
+    position: relative;
+    display: inline-block;
+    padding: var(--padding-small);
+    text-decoration: none;
+    color: inherit;
+    transition: all .2s;
+}
+
+
+/* --------------------------------------- */
+/* ----- Header ----- */
+/* --------------------------------------- */
+
+
+.header__text {
+    position: absolute;
+    top: 30%;
+}
+
