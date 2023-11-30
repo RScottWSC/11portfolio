@@ -11,23 +11,46 @@
     --font-size-huge: 75px;
 
     /* ----- colours ----- */
-    --primary: #63313A;
-    --secondary: maroon;
+    --primary: rgb(99,49,58);
+    --primary-transparent: rgba(99,49,58, 0.9);
+    --secondary: rgb(203, 64, 234);
     --text-colour: beige;
 
     /* ----- padding ----- */
-    --padding-small: 16px;
-    --padding-normal: 40px;
-    --padding-medium: 80px;
+    --padding-small: 10px;
+    --padding-normal: 20px;
+    --padding-medium: 40px;
+
+    /* ----- container sizes ----- */
+    --container-max-width: 1180px;
+    --container-normal-width: 800px;
+    --container-medium-width: 700px; 
+    --container-small-width: 500px;
+}
+
+/* --------------------------------------- */
+/* ----- Fonts ----- */
+/* --------------------------------------- */
+
+@font-face {
+    font-family: 'Hiromisake';
+    font-style: normal;
+    font-weight: 1000;
+    src: url('./fonts/HIROMISAKE.ttf');
 }
 
 /* --------------------------------------- */
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: var(--primary);
+    background: var(--primary);
     color: var(--text-colour);
+    font-family: 'Hiromisake';
 }
 
 h1 {
@@ -38,12 +61,27 @@ h2 {
     font-size: var(--font-size-large);
 }
 
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    font-size: var(--font-size-normal);
+    font-family: ;
+    background-color: var(--primary);
+}
+
+
 /* --------------------------------------- */
 /* ----- Navigation ----- */
 /* --------------------------------------- */
 
-.nav {
-    position: sticky;
+.row {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    
+}
+
+.nav {  
     display: flex;
     justify-content: flex-end;
     padding: var(--padding-normal) 0;
@@ -55,7 +93,7 @@ h2 {
 }
 
 .nav__item:not(:last-child) {
-    margin-right: var(--padding-medium);
+    margin-right: 100px;
 }
 
 .nav__link {
@@ -64,17 +102,53 @@ h2 {
     padding: var(--padding-small);
     text-decoration: none;
     color: inherit;
-    transition: all .2s;
+    transition: all 0.5s;
 }
 
+.nav__link::after {
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    display: inline-block;
+    height: var(--padding-small);
+    background: var(--text-colour);
+    transition: all 0.25s;
+}
+
+.nav__link:hover {
+    color: var(--secondary);
+}
+
+.nav__link:hover::after {
+    right: 0;
+    height: 2px;
+    background: var(--secondary);
+}
 
 /* --------------------------------------- */
-/* ----- Header ----- */
+/* ----- Title ----- */
 /* --------------------------------------- */
 
+.header {
+    background: url('./images/coding-ball.jpg');
+    height: 80vh;
+    background-size:contain;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+.header__cover {
+    background-color: var(--primary-transparent);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
 
 .header__text {
     position: absolute;
     top: 30%;
+    left: 10%;
 }
 
