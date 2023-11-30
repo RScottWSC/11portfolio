@@ -16,10 +16,13 @@
     --secondary: rgb(203, 64, 234);
     --text-colour: beige;
 
+    --border-light: 1px solid beige;
+
     /* ----- padding ----- */
     --padding-small: 10px;
     --padding-normal: 20px;
     --padding-medium: 40px;
+    --padding-huge: 80px;
 
     /* ----- container sizes ----- */
     --container-max-width: 1180px;
@@ -39,6 +42,13 @@
     src: url('./fonts/HIROMISAKE.ttf');
 }
 
+@font-face {
+    font-family: 'CaviarDreams';
+    font-style: normal;
+    font-weight: 1000;
+    src: url('./fonts/CaviarDreams.ttf');
+}
+
 /* --------------------------------------- */
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
@@ -50,6 +60,11 @@ html {
 body {
     background: var(--primary);
     color: var(--text-colour);
+    font-family: 'CaviarDreams';
+    font-size: var(--font-size-normal);
+}
+
+h1, h2, h3, header {
     font-family: 'Hiromisake';
 }
 
@@ -61,15 +76,63 @@ h2 {
     font-size: var(--font-size-large);
 }
 
+h3 {
+    font-size: var(--font-size-medium-1);
+}
+
 header {
     position: fixed;
     left: 0;
     right: 0;
     font-size: var(--font-size-normal);
-    font-family: ;
-    background-color: var(--primary);
+    background: var(--primary);
+    z-index: 2;
 }
 
+section::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--text-colour);
+    margin: var(--padding-huge);
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* --------------------------------------- */
+/* ----- Buttons and Links ----- */
+/* --------------------------------------- */
+
+a {
+    color: var(--secondary);
+    transition: all .5s;
+    outline: 2px solid transparent;
+}
+
+.link__text {
+    position: relative;
+    display: inline-block;
+    padding: .6rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.link__text::after {
+content: '';
+display: block;
+height: 2px;
+width: var(--padding-medium);
+background: var(--secondary);
+margin: var(--padding-small);
+}
+
+.link__text:hover {
+    color: var(--secondary);
+    transform: scale(1.2);
+}
 
 /* --------------------------------------- */
 /* ----- Navigation ----- */
@@ -78,7 +141,6 @@ header {
 .row {
     max-width: var(--container-max-width);
     margin: 0 auto;
-    
 }
 
 .nav {  
@@ -134,7 +196,7 @@ header {
 .header {
     background: url('./images/coding-ball.jpg');
     height: 80vh;
-    background-size:contain;
+    background-size:cover;
     background-position: center;
     background-attachment: fixed; 
 }
@@ -143,7 +205,6 @@ header {
     background-color: var(--primary-transparent);
     overflow: hidden;
     height: 100%;
-    z-index: 2;
 }
 
 .header__text {
@@ -152,3 +213,27 @@ header {
     left: 10%;
 }
 
+/* --------------------------------------- */
+/* ----- Final Outcome Section ----- */
+/* --------------------------------------- */
+
+.final__box {
+    display: flex;
+    align-items: center;
+}
+
+.final__text {
+    flex: 0 0 45%;
+    margin-right: var(--padding-medium);
+}
+
+.final__repo {
+    height: var(--font-size-medium);
+    width: var(--font-size-medium);
+    margin-left: var(--padding-small);
+    transition: all .3s;
+}
+
+.final__repo:hover {
+    transform: scale(1.3);
+}
