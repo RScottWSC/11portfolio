@@ -38,15 +38,22 @@
 @font-face {
     font-family: 'Hiromisake';
     font-style: normal;
-    font-weight: 1000;
+    font-weight: 900;
     src: url('./fonts/HIROMISAKE.ttf');
 }
 
 @font-face {
     font-family: 'CaviarDreams';
     font-style: normal;
-    font-weight: 1000;
+    font-weight: 100;
     src: url('./fonts/CaviarDreams.ttf');
+}
+
+@font-face {
+    font-family: 'CaviarDreamsBold';
+    font-style: bold;
+    font-weight: 1000;
+    src: url('./fonts/CaviarDreams_Bold.ttf');
 }
 
 /* --------------------------------------- */
@@ -126,6 +133,18 @@ margin: var(--padding-small);
 .link__text:hover {
     color: var(--secondary);
     transform: scale(1.2);
+}
+
+.link__repo {
+    height: var(--font-size-medium);
+    width: var(--font-size-medium);
+    margin-left: var(--padding-small);
+    transition: all .3s;
+    border: none;
+}
+
+.link__repo:hover {
+    transform: scale(1.3);
 }
 
 /* --------------------------------------- */
@@ -242,23 +261,34 @@ section::after {
     margin-right: var(--padding-medium);
 }
 
-/* ----- Final ----- */
-
-.final__repo {
-    height: var(--font-size-medium);
-    width: var(--font-size-medium);
-    margin-left: var(--padding-small);
-    transition: all .3s;
-    border: none;
-}
-
-.final__repo:hover {
-    transform: scale(1.3);
-}
 
 /* ----- Implications ----- */
 
 .implications__content {
     justify-content: space-between;
     margin-right: 10%;
+}
+
+/* ----- Feedback ----- */
+
+.feedback__question {
+    font-family: 'CaviarDreamsBold';
+}
+
+.feedback__answer {
+    font-style: italic;
+    text-align: center;
+}
+
+.feedback__answer::before  {
+    content: "\"";
+    font-family: 'Hiromisake';
+    font-size: var(--font-size-medium-1);
+    
+}
+
+.feedback__answer::after {
+    content: "\"";
+    font-family: 'Hiromisake';
+    font-size: var(--font-size-medium-1);
 }
