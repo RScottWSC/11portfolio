@@ -234,6 +234,27 @@ margin: var(--padding-small);
 }
 
 /* --------------------------------------- */
+/* ----- Tables ----- */
+/* --------------------------------------- */
+table {
+    border-collapse: collapse;
+}
+
+td{
+    min-width: 200px;
+    text-align: center;
+    padding: var(--padding-small);
+}
+
+.output {
+    max-width: 400px;
+}
+
+thead {
+    font-family: 'Hiromisake';
+}
+
+/* --------------------------------------- */
 /* ----- Sections ----- */
 /* --------------------------------------- */
 
@@ -259,6 +280,11 @@ section::after {
 .left-text {
     flex: 0 0 45%;
     margin-right: var(--padding-medium);
+}
+
+.right-text {
+    flex: 0 0 45%;
+    margin-left: var(--padding-medium);
 }
 
 
